@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 /*
  * AUTHOR: Jason Fukumoto
- * COURSE: CSc210, Fall 18
  * FILE: PA5, PA5Main.java
  * 
  * PURPOSE: This program will determine the fastest route by using 
