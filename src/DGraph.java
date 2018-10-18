@@ -4,24 +4,9 @@ import java.util.TreeSet;
 
 /**
  * DGraph.java
- * 
  * Represents a directed graph. The nodes are represented as
  * integers ranging from 1 to num_nodes inclusive.
  * The weights are assumed to be >= zero.
- * 
- * Usage instructions:
- * 
- * Construct a DGraph
- * DGraph graph = new DGraph(numNodes);
- * 
- * Add an edge
- * graph.addEdge(v, w, weight);
- * 
- * Other useful methods:
- * graph.getWeight(v,w)
- * graph.getNumNodes()
- * List<Integer> list = graph.getNeighbors(v);
- * 
  */
 public class DGraph {
 
@@ -30,12 +15,9 @@ public class DGraph {
         this.numNodes = numNodes;
     }
 
-    /**
+    /*
      * Adds the directed edge (v,w) to the graph including updating the node
      * count appropriately.
-     * 
-     * @param v
-     * @param w
      */
     public void addEdge(int v, int w, double distance) {
         assert v >= 1 && w >= 1;
@@ -58,12 +40,8 @@ public class DGraph {
         return -1;
     }
 
-    /**
+    /*
      * For a given node returns a sorted list of all its neighbors.
-     * 
-     * @param v
-     *            Node identifier
-     * @return A sorted list of v's neighbors.
      */
     public List<Integer> getNeighbors(int v) {
         assert v <= numNodes;
@@ -86,18 +64,16 @@ public class DGraph {
         return dot_str + "}\n";
     }
 
-    // =====================================
     // The guts of the implementation
     private TreeSet<Edge> edges;
     private final int numNodes;
 
-    /**
+    /*
      * Immutable undirected edges.
      */
     public class Edge implements Comparable<Edge> {
-        /**
+        /*
          * Stores the given nodes with smaller id first.
-         * 
          * @param node1
          * @param node2
          */
@@ -108,7 +84,7 @@ public class DGraph {
             this.weight = weight;
         }
 
-        /**
+        /*
          * @return an directed edge string in dot format
          */
         public String toDotString() {
@@ -116,7 +92,7 @@ public class DGraph {
                     + "\"];";
         }
 
-        /**
+        /*
          * Lexicographical ordering on edges (node1,node2).
          */
         public int compareTo(Edge other) {
@@ -130,7 +106,7 @@ public class DGraph {
             }
         }
 
-        /**
+        /*
          * Lexicographical ordering on edges (node1,node2).
          */
         public boolean equals(Object o) {
@@ -141,7 +117,7 @@ public class DGraph {
             return (node1 == other.node1) && (node2 == other.node2);
         }
 
-        /**
+        /*
          * Know number of nodes when read in input file, so can give each edge a
          * unique hash code.
          */
