@@ -8,27 +8,6 @@ import java.util.TreeSet;
  * The Trip class represents a sequence of cities being visited in
  * a particular order.  Each city is represented with an integer between
  * 1 and numCities inclusive.
- * 
- * Construct a Trip as follows:
- *     Trip myTrip = new Trip(numCities);
- * 
- * To put a city into the sequence do the following:
- *     myTrip.chooseNextCity(city);
- * 
- * To remove the last city that was put into the sequence
- * do the following:
- *     myTrip.unchooseLastCity();
- * 
- * To see if the trip is a valid trip with all of the cities,
- * call isPossible() and pass in a directed graph that indicates
- * which cities are connected.
- *     myTrip.isPossible(graph)
- * 
- * To determine the cost of a trip, call
- *     myTrip.tripCost(graph)
- * 
- * There are some other handy routines in the below you might
- * want to check out while implementing PA5.
  */
 public class Trip {
 
