@@ -1,10 +1,9 @@
 import java.io.Serializable;
 
-/**
- * the MoveMessage has all the information needed for the game transporting 
+/** 
+ * @author Jason Fukumoto
+ *Description: MoveMessage has all the information needed for the game transporting 
  * through the network
- * @author guojunwei & jasonfukumoto
- *
  */
 public class Connect4MoveMessage implements Serializable{
 	 
