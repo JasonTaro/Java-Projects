@@ -2,8 +2,8 @@ import java.util.Observable;
 
 /**
  * 
- * @author guojunwei & jasonfukumoto
- * the model class have the 2d integer array, which represents different color
+ * @author Jason Fukumoto
+ * Description: Model class have the 2d integer array, which represents different color
  *  0 for white, 1 for yellow, 2 for red
  */
 public class Connect4Model extends Observable{
