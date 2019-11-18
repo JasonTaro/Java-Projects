@@ -20,7 +20,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
- * @author guojunwei & jasonfukumoto
+ * @author Jason Fukumoto
  * File: Connect4View.java
  * Description: Displays a 7x6 connect 4 game with yellow and red colors
  * for two players. Uses networking with server/client. Allows human and
