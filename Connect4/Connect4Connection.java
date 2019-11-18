@@ -7,8 +7,8 @@ import java.net.SocketException;
 
 /**
  * 
- * @author guojunwei & jasonfukumoto
- * Connection class creates the connection between server and client
+ * @author Jason Fukumoto
+ * Description: Connection class using sockets.
  */
 public class Connect4Connection {
 	
