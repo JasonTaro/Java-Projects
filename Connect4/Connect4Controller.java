@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * 
- * @author guojunwei & jasonfukumoto
- * This class is to play the game
+ * @author Jason Fukumoto
+ * Description: Controller class, controls game state.
  *
  */
 public class Connect4Controller {
