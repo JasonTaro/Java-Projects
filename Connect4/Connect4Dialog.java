@@ -12,7 +12,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * @author guojunwei & jasonfukumoto
+ * @author Jason Fukumoto
  * File: Connect4Dialog.java
  * Description: The dialog creates a class which extends stage, it acts as a model dialog
  */
