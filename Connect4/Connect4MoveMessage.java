@@ -1,13 +1,14 @@
 import java.io.Serializable;
 
-/** 
+/**
  * @author Jason Fukumoto
- *Description: MoveMessage has all the information needed for the game transporting 
+ * File: Connect4MoveMessage
+ * The MoveMessage has all the information needed for the game transporting 
  * through the network
  */
 public class Connect4MoveMessage implements Serializable{
 	 
-	public static int YELLOW = 1;
+    public static int YELLOW = 1;
     public static int RED = 2;
     private static final long serialVersionUID = 1L;
 
