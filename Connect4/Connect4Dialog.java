@@ -64,7 +64,7 @@ public class Connect4Dialog extends Stage {
 			new Thread(task).start();
 			this.close();
 		});
-		Button cancle = new Button("Cancle");
+		Button cancle = new Button("Cancel");
 		cancle.setOnAction(event -> {
 			this.close();
 		});
