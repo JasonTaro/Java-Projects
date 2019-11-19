@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import javafx.application.Application;
@@ -93,8 +94,7 @@ public class Connect4View extends Application implements Observer {
 			if (Connect4.MY_TURN) {
 				double sceneX = event.getSceneX();
 				int clickCol = controller.getCol(sceneX);
-				//int clickCol = getCol(sceneX);
-				//if full column
+				//if not full column
 				if (this.board[0][clickCol].getFill().equals(Color.WHITE)) {
 					controller.humanTurn(clickCol);
 				} else {
@@ -103,6 +103,10 @@ public class Connect4View extends Application implements Observer {
 					alert.setHeaderText("Error");
 					alert.setContentText("Column full, pick somewhere else!");
 					alert.showAndWait();
+				}
+				//If no more placements and game is a tie
+				if(controller.isTie()) {
+					displayMessage("tied");
 				}
 			}
 		});
@@ -129,6 +133,16 @@ public class Connect4View extends Application implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		Connect4MoveMessage message = (Connect4MoveMessage) arg;
+		if (Connect4.MY_TURN) {
+			
+			try {
+				Connect4.connection.output(message);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		Connect4.MY_TURN = !Connect4.MY_TURN ;
+		
 		Color color = Color.RED;
 		if (message.getColor() == Connect4MoveMessage.YELLOW) {
 			color = Color.YELLOW;
