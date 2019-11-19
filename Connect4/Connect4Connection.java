@@ -8,7 +8,8 @@ import java.net.SocketException;
 /**
  * 
  * @author Jason Fukumoto
- * Description: Connection class using sockets.
+ * File: Connect4Connection.java
+ * Connection class creates the connection between server and client, and creates I/O streams.
  */
 public class Connect4Connection {
 	
@@ -35,8 +36,6 @@ public class Connect4Connection {
 	 * input is the information the other user accepts.
 	 */
 	public void createConnection() {
-		
-		//checkpoint to see if CREAT, PLAY_AS, SERVER, PORT work
 		try {
 			if (CREATE == 1) { //creates server
 				ServerSocket serverSocket = new ServerSocket(Integer.parseInt(PORT));
@@ -47,7 +46,7 @@ public class Connect4Connection {
 			output = new ObjectOutputStream(connection.getOutputStream());
 			input = new ObjectInputStream(connection.getInputStream());
 			//when its ai's turn and the ai play option is chosen
-			if(Connect4.MY_TURN && Connect4Connection.PLAY_AS == 2) {
+			if(Connect4.MY_TURN && PLAY_AS == 2) {
 				controller.computerTurn();
 			}
 			//Reads all contents of input
@@ -79,8 +78,9 @@ public class Connect4Connection {
 	 * and socketserver.
 	 */
 	public void close() {
+		close = true;
 		try {
-			close = true;
+			//close = true;
 			if (input!=null) { //closes input
 				input.close();
 			}
@@ -88,8 +88,6 @@ public class Connect4Connection {
 				output.close();
 			}
 			if (connection!=null) { //closes connection
-				connection.shutdownOutput();
-				connection.shutdownOutput();
 				connection.close();
 			}
 			if (serverSocket!=null) { //closes server socket
@@ -99,4 +97,5 @@ public class Connect4Connection {
 			e.printStackTrace();
 		}
 	}
+	
 }
