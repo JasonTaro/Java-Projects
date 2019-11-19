@@ -1,11 +1,10 @@
 import javafx.application.Application;
 /**
  * 
- * @author jasonfukumoto
+ * @author Jason Fukumoto
  * Connect 4
- * 
- * This project is a two player connect 4 game. Uses Graphical User Interface with javafx.
- * Follows MVC architecture with networking.
+ * This project is to create a two-player connect4 game, it uses MVC implementation
+ * and networks the two players with sockets
  *
  */
 public class Connect4 {
