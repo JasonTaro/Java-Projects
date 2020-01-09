@@ -13,9 +13,7 @@ import java.util.Map.Entry;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Optional;
-
 import javax.swing.JOptionPane;
-
 import Enemies.Enemy;
 import Enemies.Enemy1;
 import Enemies.Enemy2;
@@ -65,19 +63,13 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & Qingzhou Pan & Guojun Wei
- * CSC 335, Fall 2019
- * Team Project
  * The view class takes in player's action, click, place, sell tower, and menu 
  * operation, the enemy comes out and the tower gives corresponding attack
- *
  */
 
 public class TowerDefenseView extends Application implements Observer {
 
 	public static final double HEIGHT = 50; //each grid pane square size in pixel
-
 	public TowerDefenseController controller;
 	private GridPane gridPane = new GridPane();
 	private Tower sellTower = null;
@@ -95,7 +87,6 @@ public class TowerDefenseView extends Application implements Observer {
 	 */
 	public TowerDefenseView() {
 		init();
-
 	}
 
 	/**
@@ -121,14 +112,12 @@ public class TowerDefenseView extends Application implements Observer {
 		createRightContainer(window);
 		Scene scene = new Scene(root, 1150, 750);
 		stage.setScene(scene);
-		
 		stage.show();
 	}
 
 	/**
 	 * paste image to the 15*15 grid pane based upon specific map info, set LCT 
 	 * tower info based upon the event, place or sell tower 
-	 * 
 	 * @param window: BorderPane to set grid
 	 */
 	private void createBoard(BorderPane window) {
@@ -148,7 +137,6 @@ public class TowerDefenseView extends Application implements Observer {
 					gridPane.add(imageView, j, i);
 					get_imagePos--;
 				}
-
 			}
 		}
 		//place tower
@@ -188,9 +176,7 @@ public class TowerDefenseView extends Application implements Observer {
 
 	/**
 	 * Creates the menu, money, and tower vBoxes that's displayed on the right.
-	 * 
-	 * @param window
-	 *            BorderPane to add vBoxes
+	 * @param window BorderPane to add vBoxes
 	 */
 	private void createRightContainer(BorderPane window) {
 		GridPane rightGrid = new GridPane();
@@ -203,14 +189,11 @@ public class TowerDefenseView extends Application implements Observer {
 		createTowers(rightGrid); // tower VBox
 		createTowerInfo(rightGrid);
 		window.setRight(rightGrid);
-		
 	}
 
 	/**
 	 * Creates the menu drop down for new game, pause, and speedup, save and load
-	 * 
-	 * @param vBox
-	 *            Vertical box to add children.
+	 * @param vBox Vertical box to add children.
 	 */
 	private void createMenu(GridPane rightGrid) {
 		// Menu VBox
@@ -225,7 +208,6 @@ public class TowerDefenseView extends Application implements Observer {
 		pause.setDisable(true); // disable until new game is clicked
 		speedUp.setDisable(true); // disable until new game is clicked
 
-		
 		save.setOnAction(event -> {
 			this.controller.save();
 		});
@@ -243,9 +225,7 @@ public class TowerDefenseView extends Application implements Observer {
 
 	/**
 	 * Creates the total balance for the game.
-	 * 
-	 * @param vBox
-	 *            Vertical box to add children
+	 * @param vBox Vertical box to add children
 	 */
 	private void createMoney(GridPane rightGrid) {	
 		HBox moneyBox = new HBox(5);	
@@ -271,9 +251,7 @@ public class TowerDefenseView extends Application implements Observer {
 
 	/**
 	 * Creates tower boxes with event handlers, sell button
-	 * 
-	 * @param vBox
-	 *            Vertical box to add children
+	 * @param vBox Vertical box to add children
 	 */
 	private void createTowers(GridPane rightGrid) {
 		List<String> towerName = new ArrayList<String>(Arrays.asList("Machine Gun", "Sniper", "Cannon", "Rocket\nLauncher", "Tesla Gun", "Money\nGenerator"));
@@ -326,7 +304,6 @@ public class TowerDefenseView extends Application implements Observer {
 			rightGrid.add(label, 1, i+1);
 		}
 	}
-	
 	
 	/**
   	* Creates a list of tower objects to be used as buttons
@@ -543,10 +520,7 @@ public class TowerDefenseView extends Application implements Observer {
 					circle.setVisible(false);
 					removelist.add(key);
 					circleMap.remove(key.getId());
-
-					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					model.addBalance(key.getCredit());
-					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 				} else {
 					Path path = new Path();
@@ -596,7 +570,6 @@ public class TowerDefenseView extends Application implements Observer {
 									try {
 										start(stages);
 									} catch (Exception e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 								} else {
@@ -609,10 +582,6 @@ public class TowerDefenseView extends Application implements Observer {
 									System.exit(1);
 								}
 							});
-								
-							//ALERT	
-							//	
-							//init();	
 						}	
 					}
 				}
@@ -631,7 +600,6 @@ public class TowerDefenseView extends Application implements Observer {
 	 */
 	private ImageView createEnemyView(Enemy key) {
 		ImageView imageView = new ImageView();
-
 		imageView.setX(-50);
 		imageView.setY(-50);
 		if (key instanceof Enemy1) {
@@ -648,7 +616,6 @@ public class TowerDefenseView extends Application implements Observer {
 			imageView.setImage(image);
 		} else {
 		}
-
 		imageView.setFitHeight(50);
 		imageView.setFitWidth(50);
 		circleMap.put(key.getId(), imageView);
