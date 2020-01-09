@@ -1,12 +1,7 @@
 package Enemies;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * Enemy4 concrete class implementation
- * 
  */
 public class Enemy4 extends Enemy {
 
@@ -20,6 +15,4 @@ public class Enemy4 extends Enemy {
 		this.speed = 4;
 		this.alive = true;
 	}
-	
-
 }
