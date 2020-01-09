@@ -4,19 +4,13 @@ import Tower.*;
 import Enemies.*;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The model class has all the info required to update the view   
- *
  */
 
 public class TowerDefenseMessge {
 	
 	public static final int TYPE_CHANGE_MAP = 10;
 	public static final int TYPE_LOAD = 11;
-	
 	private int row;
 	private int col;
 	private int color; // 0 grass. 1 road. 2 tower. 3 enemy.
