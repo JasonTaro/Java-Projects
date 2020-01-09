@@ -4,15 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The cell class is an array list which can hold object like enemy or tower  
- *
  */
 
 public class TowerDefenseCell implements Serializable {
+	
 	private ArrayList<Object> cellList;
 	
 	/**
