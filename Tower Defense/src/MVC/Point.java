@@ -3,16 +3,11 @@ package MVC;
 import java.io.Serializable;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The point class has x, y coordinates, getters, setters and equal methods
  */
 public class Point implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Integer col;
 	private Integer row;
 	
