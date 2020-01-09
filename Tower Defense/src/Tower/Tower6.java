@@ -3,12 +3,7 @@ package Tower;
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * Tower6 concrete class implementation
- * 
  */
 public class Tower6 extends Tower {
 
@@ -26,7 +21,6 @@ public class Tower6 extends Tower {
 		//this.description = "Increase Balance by $30/second";
 		this.direction = "Increase Balance by $30/sec";
 	}
-
 
 	/**
 	 * this method is not used for money generating tower
