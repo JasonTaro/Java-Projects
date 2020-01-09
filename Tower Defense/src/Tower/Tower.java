@@ -1,25 +1,17 @@
 package Tower;
  
 import java.io.Serializable;
-
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The abstract tower class provides all the info for the the MVC mode
- * 
  */
 
 public abstract class Tower implements Serializable {
 
 	private static final long serialVersionUID = 7990071241630315383L;
-	
 	protected int damage;
 	protected int cost;
-//	protected int soldPrice = (int) 0.75 * cost;
 	protected int range;
 	protected boolean exist;
 	protected int index;
