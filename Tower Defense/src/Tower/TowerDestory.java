@@ -3,12 +3,7 @@ package Tower;
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * TowerDestroy is the tower that is sold 
- * 
  */
 public class TowerDestory extends Tower {
 	private int x;
