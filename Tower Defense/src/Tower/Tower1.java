@@ -4,12 +4,7 @@ import Enemies.Enemy;
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * Tower1 concrete class implementation
- * 
  */
 public class Tower1 extends Tower {
 
