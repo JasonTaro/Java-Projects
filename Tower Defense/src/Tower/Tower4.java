@@ -3,12 +3,7 @@ package Tower;
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * Tower4 concrete class implementation
- * 
  */
 public class Tower4 extends Tower {
 
