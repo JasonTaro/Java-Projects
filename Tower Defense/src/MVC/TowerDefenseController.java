@@ -11,13 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
-
 import Enemies.Enemy;
 import Enemies.Enemy1;
 import Enemies.Enemy2;
 import Enemies.Enemy3;
 import Enemies.Enemy4;
-//imports Tower package
 import Tower.Tower;
 import Tower.Tower1;
 import Tower.Tower2;
@@ -29,13 +27,8 @@ import main.TowerDefense;
 
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The controller class makes operations like read map info and put it into 
  * model, makes place, sell tower, tower attack and enemy move
- *
  */
 
 public class TowerDefenseController {
@@ -60,7 +53,6 @@ public class TowerDefenseController {
 	 * this method reads through the txt file and get size of the map, initialize the 
 	 * board, read enemy waves and put into the list, read the enemy path x, y 
 	 * coordinate as point object and put into the path list
-	 * 
 	 */
 	private void createStage() {
 		Scanner input = null;
@@ -132,11 +124,8 @@ public class TowerDefenseController {
 	
 	/**
 	 * Calls model to place tower then sets last clicked tower to null.
-	 * 
-	 * @param x
-	 *            coordinate in pixels
-	 * @param y
-	 *            coordinate in pixel
+	 * @param x coordinate in pixels
+	 * @param y coordinate in pixel
 	 */
 	public void placeTower(int x, int y) {
 		int col = x / 50;
@@ -188,11 +177,8 @@ public class TowerDefenseController {
 
 	/**
 	 * Checks to see if a position on the grid is taken. For placement purposes
-	 * 
-	 * @param x
-	 *            coordinate in pixels.
-	 * @param y
-	 *            coordinate in pixels.
+	 * @param x coordinate in pixels.
+	 * @param y coordinate in pixels.
 	 * @return boolean representing if position is taken.
 	 */
 	public boolean is_tower_here(int x, int y) {
@@ -208,7 +194,6 @@ public class TowerDefenseController {
 	 * return the tower position on the board
 	 * @param x in pixel
 	 * @param y in pixel
-	 * @return
 	 */
 	public Tower getTowerAt(int x, int y) {
 		int col = x / 50;
@@ -325,8 +310,6 @@ public class TowerDefenseController {
 				}			
 			}
 		}
-		
-		
 		model.fps();
 	}
 
@@ -378,13 +361,13 @@ public class TowerDefenseController {
 	public void save() {
 		try{  
 			model.saveLevel();
-            FileOutputStream fs = new FileOutputStream("savedFile.ser");  // TODO
-            ObjectOutputStream os =  new ObjectOutputStream(fs);  
-            os.writeObject(this.model);  
-            os.close();  
-        }catch(Exception ex){  
-            ex.printStackTrace();  
-        }  
+            		FileOutputStream fs = new FileOutputStream("savedFile.ser");  // TODO
+            		ObjectOutputStream os =  new ObjectOutputStream(fs);  
+            		os.writeObject(this.model);  
+            		os.close();  
+        	}catch(Exception ex){  
+            	ex.printStackTrace();  
+        	}  
 	}
 
 	/**
@@ -403,7 +386,7 @@ public class TowerDefenseController {
 			model.loadTower();
 			fps();
 		}catch(Exception ex){  
-            ex.printStackTrace();  
+            		ex.printStackTrace();  
 		}
 	}
 
