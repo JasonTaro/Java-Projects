@@ -7,46 +7,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.Observable;
 import java.util.UUID;
-
 import Enemies.Enemy;
 import Networking.TowerDefenseMessge;
 import Tower.Tower;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The model class has all the data for the game, intBoard, objBoard, the clicked
  * tower information, enemyWave list, etc,.
- *
  */
 
 public class TowerDefenseModel extends Observable implements Serializable {
 
 	private int imagePos = 225;//it's 15*15 gridpane, so totally 225 pieces of images 
-	
 	private static int LEVEL = 1;
 	private int level = LEVEL;
-
 	private int ROW; // this is temporary
 	private int COL; // this is temporary
 	private List<Point> path = new ArrayList<>();
 	private List<List<Enemy>> wave = new ArrayList<>();
 	private ArrayList<Tower> towerList = new ArrayList<>();
-
 	private Map<Enemy, Point> map = new HashMap<>();
-
 	private TowerDefenseCell objBoard[][];
 	private int intBoard[][]; // [0-Grass] [1-Road] [2-Tower] [3-Enemy]
-
 	private Tower LAST_CLICKED_TOWER;
 	private int balance;
-
 	private ArrayList<Integer> pathCoord = new ArrayList<Integer>();
-
 	public boolean changingMap = false;
-
 	public List<Enemy> currentEnemyList;
 	
 	/**
@@ -62,7 +48,6 @@ public class TowerDefenseModel extends Observable implements Serializable {
 	 */
 	public void addLevel() {
 		LEVEL += 1;
-		//System.out.println("add one !!!!!!!!!!!!!!!!!");
 	}
 
 	/**
@@ -86,7 +71,6 @@ public class TowerDefenseModel extends Observable implements Serializable {
 	 */
 	public void update_imagePos() {
 		imagePos -= 1;
-
 	}
 
 	/**
@@ -96,7 +80,6 @@ public class TowerDefenseModel extends Observable implements Serializable {
 		objBoard = new TowerDefenseCell[ROW][COL];
 		intBoard = new int[ROW][COL];
 		this.balance = 1000;
-
 	}
 
 	/**
@@ -117,11 +100,8 @@ public class TowerDefenseModel extends Observable implements Serializable {
 
 	/**
 	 * Places tower and notifies the observer if the cost is in the budget.
-	 * 
-	 * @param row
-	 *            coordinate of row.
-	 * @param col
-	 *            coordinate of col.
+	 * @param row coordinate of row.
+	 * @param col coordinate of col.
 	 */
 	public void placeTower(int row, int col) {
 		TowerDefenseMessge message = null;
@@ -156,11 +136,8 @@ public class TowerDefenseModel extends Observable implements Serializable {
 
 	/**
 	 * sell the tower and notify the observer
-	 * 
-	 * @param row
-	 *            coordinate of row.
-	 * @param col
-	 *            coordinate of col.
+	 * @param row coordinate of row.
+	 * @param col coordinate of col.
 	 */
 	public void sellTower(int row, int col) {
 		this.balance += LAST_CLICKED_TOWER.getCost();
@@ -309,7 +286,6 @@ public class TowerDefenseModel extends Observable implements Serializable {
 	public void init_Board() {
 		this.objBoard = new TowerDefenseCell[ROW][COL];
 		this.intBoard = new int[ROW][COL];
-
 	}
 
 	/**
@@ -380,7 +356,6 @@ public class TowerDefenseModel extends Observable implements Serializable {
 		TowerDefenseMessge message = new TowerDefenseMessge(tower, enemy, 99);
 		setChanged();
 		notifyObservers(message);
-
 	}
 
 	/**
@@ -414,6 +389,4 @@ public class TowerDefenseModel extends Observable implements Serializable {
 	public void loadLevel() {
 		LEVEL = this.level;
 	}
-	
-
 }
