@@ -3,17 +3,11 @@ package Enemies;
 import MVC.Point;
 
 /**
- * 
- * @author  YongqiJia & JasonFukumoto & QingzhouPan & GuojunWei
- * CSC 335, Fall 2019
- * Team Project
  * The abstract enemy class provides all the info for the the MVC mode
- * 
  */
 public abstract class Enemy extends Point {
 
 	private String id;
-	
 	protected int hp;
 	protected int credit;
 	protected int speed;
@@ -102,8 +96,4 @@ public abstract class Enemy extends Point {
 	public void beingAttacked(int damage) {
 		this.hp = this.hp - damage;
 	}
-	
-	
-	
-	
 }
